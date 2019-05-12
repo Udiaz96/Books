@@ -5,7 +5,8 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private carSaveUrl = 'api/agregarUsuario';
+
+  private carSaveUrl = 'http://localhost:3000/api/agregarUsuario';
   constructor(private http:HttpClient) { }
 
   saveUser(user:User){
