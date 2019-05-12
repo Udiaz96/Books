@@ -6,7 +6,15 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: 'login', component: LoginComponent}
 ];
-
+/*const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'cambio'},
+  {path: 'cambio', component: CambioComponent}
+];
+const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'comics'},
+  {path: 'comics', component: ComicsComponent}
+];
+*/
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
