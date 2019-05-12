@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -43,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   onRegiser()
   {
-
+    this.router.navigateByUrl('/user');
   }
 
 }
