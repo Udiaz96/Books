@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var usuarioController = require('../controller/usuarioController');
+var usuarioController = require('../controllers/usuarioController');
 
 router.get('/listaUsuarios', usuarioController.listaUsuarios);
 router.get('/listaUsuarios/:id', usuarioController.unUsuario);
