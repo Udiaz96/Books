@@ -81,10 +81,11 @@ controller.eliminaUsuario = (req, res) =>{
 
 controller.authUsuario = (req,res) => {
 
-  var usuario = req.body.usuario;
-  var password = req.body.contraseña;
+  var usuario = req.body.user;
+  var password = req.body.password;
 
-  var sql = 'SELECT * FROM Usuarios WHERE BINARY(Usuarios.usuario) =  BINARY(?) AND BINARY(Usuarios.contrasena) = BINARY(?);';
+  var sql = 'CALL AUTH(?,?);';
+  console.log(usuario,password);
 
   req.getConnection((err,conn) =>{
     conn.query(sql,[usuario,password],(error,results) =>{

@@ -11,7 +11,7 @@ export class AuthService {
 
   public authUser(user: Autenticar)
   {
-    const token = this.http.post<Autenticar>('http://localhost:3000/users/login',user);
+    const token = this.http.post<Autenticar>('http://localhost:3000/api/auth',user);
     console.log(token);
 
     return token;
