@@ -15,7 +15,9 @@ export class UsuariosComponent implements OnInit {
   }
 
   saveUser(user:User){
+    console.log(user);
     this.usuarioService.saveUser(user).subscribe(data =>{
+      console.log(data);
       this.users.push(data);
     });
   }

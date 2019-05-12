@@ -9,10 +9,16 @@ const app = express();
 var mysql = require('mysql');
 var myConnection = require('express-myconnection');
 app.use(myConnection(mysql, {
-  host: 'localhost',
+  /*host: 'localhost',
   user: 'root',
   password : '',
   port: 3306,
+  database: 'comics'*/
+
+  host: 'localhost',
+  user: 'root',
+  password : 'root',
+  port: 8889,
   database: 'comics'
 }, 'single'));
 

@@ -10,6 +10,8 @@ export class UsuarioService {
   constructor(private http:HttpClient) { }
 
   saveUser(user:User){
+    console.log(user);
+
     return this.http.post<User>(this.carSaveUrl, user);
   }
 }

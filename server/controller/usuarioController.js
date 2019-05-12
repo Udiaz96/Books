@@ -36,10 +36,11 @@ controller.unUsuario = (req, res) =>{
 controller.agregarUsuario = (req, res) =>{
     var Rusuario = req.body;
     let sql = 'CALL Registra_Usuario(?, ?, ?, ?, ?, ?, ?)';
+    idRol = 2; //Agrego esto aqui porque me dije que el error era que faltaba el parametro. Es que aunque en el model user.ts se pone tomo tipo number, no se asigna en el formulario.
     req.getConnection((err, conn) =>{
-        conn.query(sql, 
+        conn.query(sql,
             [Rusuario.nombre, Rusuario.apellidos, Rusuario.edad,
-             Rusuario.usuario, Rusuario.correo, Rusuario.contrasena, Rusuario.idRol ], 
+             Rusuario.usuario, Rusuario.correo, Rusuario.contrasena, idRol ],
             (error, results)=>{
             if(error){
                 res.send(error);
@@ -56,7 +57,7 @@ controller.updateUsuario = (req, res) =>{
     req.getConnection((err, conn) =>{
         conn.query(sql,
                     [id,usrAct.nombre, usrAct.apellidos, usrAct.edad,
-                        usrAct.usuario, usrAct.correo, usrAct.contrasena, usrAct.idRol], 
+                        usrAct.usuario, usrAct.correo, usrAct.contrasena, usrAct.idRol],
                         (error, results) =>{
                     if(error){
                         res.send(error);
