@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CambioComponent } from './cambio/cambio.component';
+import { ComicsComponent } from './comics/comics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    CambioComponent,
+    ComicsComponent
   ],
   imports: [
     BrowserModule,
