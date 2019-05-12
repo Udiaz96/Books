@@ -37,9 +37,9 @@ controller.agregarUsuario = (req, res) =>{
     var Rusuario = req.body;
     let sql = 'CALL Registra_Usuario(?, ?, ?, ?, ?, ?, ?)';
     req.getConnection((err, conn) =>{
-        conn.query(sql, 
+        conn.query(sql,
             [Rusuario.nombre, Rusuario.apellidos, Rusuario.edad,
-             Rusuario.usuario, Rusuario.correo, Rusuario.contrasena, Rusuario.idRol ], 
+             Rusuario.usuario, Rusuario.correo, Rusuario.contrasena, Rusuario.idRol ],
             (error, results)=>{
             if(error){
                 res.send(error);
@@ -56,7 +56,7 @@ controller.updateUsuario = (req, res) =>{
     req.getConnection((err, conn) =>{
         conn.query(sql,
                     [id,usrAct.nombre, usrAct.apellidos, usrAct.edad,
-                        usrAct.usuario, usrAct.correo, usrAct.contrasena, usrAct.idRol], 
+                        usrAct.usuario, usrAct.correo, usrAct.contrasena, usrAct.idRol],
                         (error, results) =>{
                     if(error){
                         res.send(error);
@@ -79,4 +79,22 @@ controller.eliminaUsuario = (req, res) =>{
     });
 };
 
+controller.authUsuario = (req,res) => {
+
+  var usuario = req.body.usuario;
+  var password = req.body.contraseña;
+
+  var sql = 'SELECT * FROM Usuarios WHERE BINARY(Usuarios.usuario) =  BINARY(?) AND BINARY(Usuarios.contrasena) = BINARY(?);';
+
+  req.getConnection((err,conn) =>{
+    conn.query(sql,[usuario,password],(error,results) =>{
+      if(err)
+      {
+        res.send(error);
+      }
+      res.json(results);
+    });
+  });
+
+}
 module.exports = controller;

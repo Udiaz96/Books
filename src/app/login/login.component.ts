@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -24,6 +25,12 @@ export class LoginComponent implements OnInit {
   {
     // TODO: Use EventEmitter with form value
     console.warn(this.loginForm.value);
+
+    this.authService.authUser(this.loginForm.value).subscribe(
+      data => {
+        console.log(data);
+      }
+    );
   }
 
 }
