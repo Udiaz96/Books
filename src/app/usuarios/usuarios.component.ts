@@ -14,7 +14,7 @@ export class UsuariosComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveUser(user:User){
+  saveUser(user: User){
     console.log(user);
     this.usuarioService.saveUser(user).subscribe(data =>{
       console.log(data);

@@ -39,12 +39,7 @@ controller.agregarUsuario = (req, res) =>{
     idRol = 2; //Agrego esto aqui porque me dije que el error era que faltaba el parametro. Es que aunque en el model user.ts se pone tomo tipo number, no se asigna en el formulario.
     req.getConnection((err, conn) =>{
         conn.query(sql,
-            [Rusuario.nombre, Rusuario.apellidos, Rusuario.edad,
-<<<<<<< HEAD:server/controllers/usuarioController.js
-             Rusuario.usuario, Rusuario.correo, Rusuario.contrasena, Rusuario.idRol ],
-=======
-             Rusuario.usuario, Rusuario.correo, Rusuario.contrasena, idRol ],
->>>>>>> Uli:server/controller/usuarioController.js
+            [Rusuario.nombre, Rusuario.apellidos, Rusuario.edad,Rusuario.usuario, Rusuario.correo, Rusuario.contrasena, idRol ],
             (error, results)=>{
             if(error){
                 res.send(error);
