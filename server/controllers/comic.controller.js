@@ -23,22 +23,16 @@ module.exports.comic = (req, res, next) => {
   );
 };
 module.exports.comicUpdate = (req, res, next) => {
-  var products = req.body;
-  let sql = `UPDATE products set productName= ?, productLine=?,
-  productScale=?, productVendor=?, productDescription=?, quantityInStock=?,
-  buyPrice=?, MSRP=? WHERE productCode= ?`;
+  var comics = req.body;
+  let sql = `UPDATE Comics set titulo= ?, autor=?, numero=?, imagen=?, idEditorial=? WHERE idComics = ?;`;
   conexion.query(
     sql,
     [
-      products.productName,
-      products.productLine,
-      products.productScale,
-      products.productVendor,
-      products.productDescription,
-      products.quantityInStock,
-      products.buyPrice,
-      products.MSRP,
-      products.productCode
+      comics.titulo,
+      comics.autor,
+      comics.numero,
+      comics.imagen,
+      comics.idEditorial
     ],
     (error, results, fields) => {
       if (error) {
@@ -49,7 +43,7 @@ module.exports.comicUpdate = (req, res, next) => {
   );
 };
 module.exports.comicDelete = function(req, res, next) {
-  let sql = `DELETE from Comics where idComics= ?`;
+  let sql = `DELETE FROM Comics where idComics= ?`;
   conexion.query(sql, [req.params.id], (error, results, fields) => {
     if (error) {
       res.send(error);
@@ -61,7 +55,7 @@ module.exports.comicDelete = function(req, res, next) {
 module.exports.productSave = (req, res, next) => {
   var comics = req.body;
   let sql =
-    "INSERT into products(productCode, productName, productLine, productScale, productVendor, productDescription, quantityInStock, buyPrice, MSRP) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    "INSERT into Comics(titulo, autor, numero, imagen, idEditorial) values (?, ?, ?, ?, ?);";
   conexion.query(
     sql,
     [
