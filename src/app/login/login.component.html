@@ -5,3 +5,23 @@
     </div>
   </div>
 </div>
+
+<div class="container login">
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <label>
+          Usuario:
+          <input type="text" placeholder="Usuario" formControlName="user">
+        </label>
+        <label>
+          Contraseña:
+          <input type="password" placeholder="Password" formControlName="password">
+        </label>
+          <p>
+              <input type="submit" class="btn btn-primary btn-sm btn-block" value="Log in">
+          </p>
+      </form>
+    </div>
+  </div>
+</div>
