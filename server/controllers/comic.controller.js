@@ -52,7 +52,6 @@ module.exports.comicDelete = function(req, res, next) {
   });
 };
 
-module.exports.productSave = (req, res, next) => {
 module.exports.comictSave = (req, res, next) => {
   var comics = req.body;
   let sql =
