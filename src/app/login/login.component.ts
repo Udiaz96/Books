@@ -37,6 +37,13 @@ export class LoginComponent implements OnInit {
         else{
             console.log(data[0][0].idUsuarios);
             localStorage.setItem('ACESS_TOKEN',data[0][0].idUsuarios);
+
+            if(data[0][0].idRol === 2)
+            {
+              this.router.navigateByUrl('/comics');
+            }else{
+              this.router.navigateByUrl('/admin');
+            }
           }
       }
     );

@@ -98,5 +98,4 @@ controller.authUsuario = (req,res) => {
   });
 
 }
-li:server/controller/usuarioController.js
 module.exports = controller;
