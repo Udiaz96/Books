@@ -1,3 +1,27 @@
-<p>
-  cambio works!
-</p>
+<ul class="nav flex-column nav-pills">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Autor</th>
+        <th scope="col">Numero</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Editorial</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr class="nav-item hand"  *ngFor="let cambio of cambios">
+            <td>
+              <a class="nav-link">{{ cambio.Titulo1 }}</a>
+            </td>
+            <td>
+              <a class="nav-link">{{ car.make }}</a>
+            </td>
+            <td>
+              <a class="nav-link">{{ car.year }}</a>
+            </td>
+          </tr>
+
+    </tbody>
+  </table>
+</ul>
