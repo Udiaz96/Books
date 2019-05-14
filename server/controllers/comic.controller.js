@@ -59,7 +59,7 @@ module.exports.comictSave = (req, res, next) => {
   console.log(comics);
 
     let sql =
-    "CALL NUEVO_COMIC(? ,?, ?, ?, ?)";
+    "CALL NUEVO_COMIC(? ,?, ?, ? ,?);";
   conexion.query(
     sql,
     [
@@ -71,9 +71,20 @@ module.exports.comictSave = (req, res, next) => {
     ],
     (error, results, fields) => {
       if (error) {
+        console.log(error);
         res.send(error);
       }
-      res.json(results);
+      console.log(results[0]);
+      console.log(results[0][0].ID);
+      console.log(results[0][0].USER);
+      let sql = "INSERT INTO `UsuariosComics`(`idUsuarios`, `idComics`, `cambio`) VALUES (?,?,?);"
+      conexion.query(sql,[results[0][0].USER,results[0][0].ID,0],(error,results,fields) =>{
+        if(error)
+        {
+          console.log(error)
+        }
+        results.json(results);
+      });
     }
   );
 };

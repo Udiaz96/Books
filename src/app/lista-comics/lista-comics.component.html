@@ -3,7 +3,7 @@
     <div class="col-12">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/lista">Ver comics</a>
+          <a class="nav-link active" routerLink="/lista">Editar comics</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/cambio">Cambiar comics</a>
@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container lista-comics">
   <div class="row">
     <div class="col-12">
       <div class="list-group">
@@ -27,38 +27,38 @@
 
             <form #form="ngForm" (ngSubmit)="onUpdate(form.value)" class="well">
                 <div class="form-group">
-                    <label>{{comic.titulo}}</label>
+                    <label>Título</label>
                     <input
                       type="text"
                       class="form-control"
                       required
                       name="titulo"
-                      ngModel
+                      [(ngModel)]="comic.titulo"
                     />
                 </div>
                     <div class="form-group">
-                        <label>{{comic.autor}}</label>
+                        <label>Autor</label>
                         <input
                           type="text"
                           class="form-control"
                           required
                           name="autor"
-                          ngModel
+                          [(ngModel)]="comic.autor"
                         />
                   </div>
                   <div class="form-group">
-                      <label>{{comic.numero}}</label>
+                      <label>Número</label>
                       <input
                         type="text"
                         class="form-control"
                         required
                         name="numero"
-                        ngModel
+                        [(ngModel)]="comic.numero"
                       />
                   </div>
                   <div class="form-group">
                       <label>Editorial</label>
-                      <select class="form-control" name="idEditorial"  ngModel>
+                      <select class="form-control" name="idEditorial"  [(ngModel)]="comic.idEditorial">
                         <option value="1">Detective comics</option>
                         <option value="2">Marvel</option>
                         <option value="3">Vertigo</option>
@@ -66,8 +66,8 @@
                       </select>
                     </div>
             </form>
-            <button type="button" class="btn btn-primary btn-sm "(click)="onUpdate(comic)">editar</button>
-            <button type="button" class="btn btn-primary btn-sm btn-danger" (click)="onDelete(comic)">borrar</button>
+            <button type="button" class="btn btn-primary btn-success btn-sm btn-block"(click)="onUpdate(comic)">Guardar cambios</button>
+            <button type="button" class="btn btn-primary btn-danger btn-sm btn-block" (click)="onDelete(comic)">Eliminar</button>
 
           </div>
 

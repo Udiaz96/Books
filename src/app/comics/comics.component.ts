@@ -21,8 +21,8 @@ export class ComicsComponent implements OnInit {
 
   saveComic(comic: ComicInsertar) {
 
-    console.log(comic);
     comic.idUsuario = Number(this.authService.getTokenSession());
+    console.log(comic);
     this.comicService.agregarComic(comic).subscribe(data => {
 
     this.comics.push(data);
