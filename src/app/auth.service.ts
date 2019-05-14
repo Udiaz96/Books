@@ -8,6 +8,9 @@ import { Autenticar } from './model/autenticar';
 export class AuthService {
 
   urlAutentica = 'http://localhost:3000/api/auth';
+
+  token: number;
+
   constructor(private http: HttpClient) { }
 
   public authUser(user: Autenticar)
@@ -28,7 +31,8 @@ export class AuthService {
 
   public getTokenSession()
   {
-    return localStorage.getItem('ACCESS_TOKEN');
+    this.token = Number(localStorage.getItem('ACCESS_TOKEN'));
+    return this.token;
   }
 
 }
