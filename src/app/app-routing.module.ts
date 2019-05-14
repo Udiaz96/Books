@@ -6,15 +6,17 @@ import { CambioComponent } from './cambio/cambio.component';
 import { ComicsComponent } from './comics/comics.component';
 import { AdministarUsuariosComponent } from './administar-usuarios/administar-usuarios.component';
 import { ListaComicsComponent } from './lista-comics/lista-comics.component';
+import { UsersGuard } from './users.guard';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path: '', pathMatch: 'prefix', redirectTo: 'login'},
   {path: 'login', component: LoginComponent},
-  {path: 'user', component: UsuariosComponent},
-  {path: 'cambio', component: CambioComponent},
-  {path: 'comics', component: ComicsComponent},
-  {path: 'admin', component: AdministarUsuariosComponent},
-  {path: 'lista', component: ListaComicsComponent}
+  {path: 'user', component: UsuariosComponent, canActivate: [UsersGuard]},
+  {path: 'cambio', component: CambioComponent, canActivate: [UsersGuard]},
+  {path: 'comics', component: ComicsComponent, canActivate: [UsersGuard]},
+  {path: 'admin', component: AdministarUsuariosComponent, canActivate: [AuthGuard]},
+  {path: 'lista', component: ListaComicsComponent, canActivate: [UsersGuard]}
 ];
 /*const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'cambio'},
