@@ -1,7 +1,7 @@
 var controller = {};
 
 controller.listaUsuarios = (req, res) => {
-    let sql = 'SELECT usuario, correo, contrasena, I.nombre, apellidos,'+
+    let sql = 'SELECT  idUsuarios,usuario, correo, contrasena, I.nombre, apellidos,'+
     'edad, R.nombre AS rol from usuarios U' +
     ' INNER JOIN informacionpersonal I' +
     ' ON U.idInformacionPersonal = I.idInformacionPersonal'+
