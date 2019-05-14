@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
 
             if(data[0][0].idRol === 2)
             {
-              this.router.navigateByUrl('/comics');
+              this.router.navigateByUrl('/principal');
             }else{
               this.router.navigateByUrl('/admin');
             }

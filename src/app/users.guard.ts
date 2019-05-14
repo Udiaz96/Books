@@ -19,7 +19,7 @@ export class UsersGuard implements CanActivate {
         return true;
       }else
       {
-        this.route.navigate(['/user/login']);
+        this.route.navigate(['login']);
       }
   }
 
