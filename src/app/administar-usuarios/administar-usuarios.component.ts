@@ -1,6 +1,7 @@
 import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
 import { User } from 'src/app/user';
 import { UsuarioService } from '../usuario.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-administar-usuarios',
   templateUrl: './administar-usuarios.component.html',
@@ -25,8 +26,14 @@ export class AdministarUsuariosComponent implements OnInit {
   }
 
   updateUser(user: User){
+    user.idRol = 2;
     this.usuarioService.updateUser(user).subscribe(data =>{
       this.selectUser = null;
+      Swal.fire({
+        type: "success",
+        title: "Actualización correcta",
+        text: "Se ha actualizado el usuario"
+      })
   });
   }
 

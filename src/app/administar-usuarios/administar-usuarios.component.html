@@ -14,6 +14,7 @@
       <tbody *ngFor="let user of users">
 
         <tr>
+
           <td>
             <div class="form-group">
               <input type="text" class="form-control" name="usuario" required
@@ -45,7 +46,8 @@
                 </button>
 
                 <button type="button" class="btn btn-danger delete-btn" id="delete-btn"
-                (click)="deleteUser(user)">
+                (click)="deleteUser(user)"
+                >
                     Eliminar
                 </button>
             </td>

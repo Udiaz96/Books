@@ -8,7 +8,6 @@ export class UsuarioService {
 
   private userSaveUrl = 'http://localhost:3000/api/agregarUsuario';
   private userListUrl = 'http://localhost:3000/api/listaUsuarios';
-  //private userDeleteUrl = 'http://localhost:3000/api/eliminarUsuario/';
 
   constructor(private http:HttpClient) { }
 
@@ -22,7 +21,6 @@ export class UsuarioService {
   }
 
   updateUser(user :User){
-    console.log("Estoy en update del servicio");
     return this.http.put<User>('http://localhost:3000/api/actuaUsu/'+user.idUsuarios, user);
   }
 
