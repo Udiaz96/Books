@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-9">
+
+
+    <app-cambio (cambioComicEvent)="onCambio($event)" ></app-cambio>
+  </div>
+
+  <div class="col-sm-3">
+      <button (click)="saveComic()" type="button "class="btnbtn-success btn-block">Añadir comic</button>
+    <app-comics  (updatedCarEvent)="onUpdateCar($event)" (deletedCarEvent)="onDeleteCar($event)" *ngIf="selectedCar && !formVisible" [car]= "selectedCar"
+    (selectCar)="onSelectCar($event)" >
+
+    </app-comics>
+  </div>
+</div>

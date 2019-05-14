@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" rouertLink="comics">Agregar comic</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/lista">Ver comics</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="list-group">
+        <div class="card list-group-item" *ngFor="let comic of comics">
+          <div class="card-body">
+            <h5 class="card-title">{{comic.titulo}}</h5>
+            <p class="card-text">{{comic.autor}}</p>
+            <p class="card-text">{{comic.numero}}</p>
+
+            <button type="button" class="btn btn-primary btn-sm "(click)="onUpdate(comic)">editar</button>
+            <button type="button" class="btn btn-primary btn-sm btn-danger" (click)="onDelete(comic)">borrar</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

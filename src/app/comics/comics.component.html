@@ -1,3 +1,88 @@
-<p>
-  comics works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" rouertLink="comics">Agregar comic</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lista">Ver comics</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <h5 class="card-header"></h5>
+        <div class="card-body">
+          <h5 class="card-title">Agregar nuevo comic</h5>
+          <form #form="ngForm" (ngSubmit)="saveComic(form.value)" class="well">
+            <div class="form-group">
+              <label>titulo</label>
+              <input
+                type="text"
+                class="form-control"
+                required
+                name="titulo"
+                ngModel
+              />
+            </div>
+            <div class="form-group">
+              <label>autor</label>
+              <input
+                type="text"
+                class="form-control"
+                required
+                name="autor"
+                ngModel
+              />
+            </div>
+            <div class="form-group">
+              <label>numero</label>
+              <input
+                type="text"
+                class="form-control"
+                required
+                name="numero"
+                ngModel
+              />
+            </div>
+            <div class="form-group">
+              <label>imagen</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Subir</span>
+                </div>
+                <div class="custom-file">
+                  <input
+                  type="file"
+                  class="form-control custom-file-input"
+                  required
+                  name="imagen"
+                  ngModel
+                />
+                  <label class="custom-file-label" for="inputGroupFile01">Elige archivo</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Editorial</label>
+              <select class="form-control" name="idEditorial"  ngModel>
+                <option value="1">Detective comics</option>
+                <option value="2">Marvel</option>
+                <option value="3">Vertigo</option>
+                <option value="4">Panini</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-success">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

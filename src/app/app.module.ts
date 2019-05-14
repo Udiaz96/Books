@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CambioComponent } from './cambio/cambio.component';
 import { ComicsComponent } from './comics/comics.component';
 import { AdministarUsuariosComponent } from './administar-usuarios/administar-usuarios.component';
+import { ListaComicsComponent } from './lista-comics/lista-comics.component';
+import { ComicPrincipalComponent } from './comic-principal/comic-principal.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { AdministarUsuariosComponent } from './administar-usuarios/administar-us
     UsuariosComponent,
     CambioComponent,
     ComicsComponent,
-    AdministarUsuariosComponent
+    AdministarUsuariosComponent,
+    ListaComicsComponent,
+    ComicPrincipalComponent
   ],
   imports: [
     BrowserModule,
