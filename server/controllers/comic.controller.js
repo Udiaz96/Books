@@ -3,8 +3,10 @@ var config = require("../helpers/config");
 var conexion = mysql.createConnection(config);
 
 module.exports.comicList = (req, res, next) => {
+  var id = req.body.id;
+  console.log(id);
   let sql = `SELECT titulo, autor, numero, imagen, idEditorial FROM Usuarios JOIN UsuariosComics on Usuarios.idUsuarios = UsuariosComics.idUsuarios JOIN Comics on UsuariosComics.idComics = Comics.idComics WHERE  Usuarios.idUsuarios = ?;`;
-  conexion.query(sql, [req.params.id], (error, results, fields) => {
+  conexion.query(sql, [id], (error, results, fields) => {
     if (error) res.send(error);
     res.json(results);
   });
