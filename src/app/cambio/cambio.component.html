@@ -1,3 +1,65 @@
-<p>
-  cambio works!
-</p>
+<ul class="nav flex-column nav-pills">
+  <div class="row">
+    <div class="col-sm-6 ">
+      <h1 class="center">Comic que dan</h1>
+    </div>
+    <div class="col-sm-6 ">
+      <h1 class="center">Comic que das</h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Titulo</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Numero</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Editorial</th>
+
+          <th scope="col">Titulo</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Numero</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Editorial</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="nav-item hand" *ngFor="let cambiolista of cambiolista">
+          <td>
+            <a class="nav-link">{{ cambiolista.tituloG }}</a>
+          </td>
+          <td>
+            <a class="nav-link">{{ cambiolista.autorG }}</a>
+          </td>
+          <td>
+            <a class="nav-link">{{ cambiolista.numeroG }}</a>
+          </td>
+          <!--
+          <td>
+              <a class="nav-link">{{ cambiolista.imagenG}}</a>
+            </td>
+          -->
+          <td>
+            <a class="nav-link">{{ cambiolista.editorialG }}</a>
+          </td>
+          <td>
+            <a class="nav-link">{{ cambiolista.tituloW }}</a>
+          </td>
+          <td>
+            <a class="nav-link">{{ cambiolista.autorW }}</a>
+          </td>
+          <td>
+            <a class="nav-link">{{ cambiolista.numeroW }}</a>
+          </td>
+          <!--
+              <td>
+                  <a class="nav-link">{{ cambiolista.imagenW}}</a>
+                </td>
+              -->
+          <td>
+            <a class="nav-link">{{ cambiolista.editorialW }}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ul>

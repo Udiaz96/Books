@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-sm-9">
+
+
+    <app-cambio (cambioComicEvent)="onCambio($event)" [cambios]="cambio"></app-cambio>
+  </div>
+
+  <div class="col-sm-3">
+
+    <app-comics  >
+<!-- Esto dentro del app comic pero puede no ser necesario
+  (comicSaveEvent)="onComicSave($event)"  -->
+    </app-comics>
+  </div>
+</div>
