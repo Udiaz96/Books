@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from "@angular/core";
-import { Cambio } from "../cambio";
+import { Cambio, CambioArreglo } from "../cambio";
 import { CambioService } from "../cambio.service";
 
 @Component({
@@ -9,12 +9,16 @@ import { CambioService } from "../cambio.service";
   providers: [CambioService]
 })
 export class CambioComponent implements OnInit {
- // cambios: Cambio[];
+  cambiolista: CambioArreglo[];
   @Input() cambios: Cambio[];
   @Output() cambioComicEvent = new EventEmitter();
   constructor(private cambioService: CambioService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cambioService.cambioComicLista().subscribe(data => {
+      this.cambiolista = data;
+    });
+  }
   cambioComic(cambio: Cambio) {
     console.log(cambio);
 

@@ -16,8 +16,7 @@ module.exports.cambio = (req, res, next) => {
 };
 
 module.exports.cambioLista = (req, res, next) => {
-  console.log(id);
-  let sql = `SELECT * FROM UsuariosComics WHERE cambio = 1;`;
+  let sql = `CALLL cambioLista()`;
   conexion.query(sql, (error, results, fields) => {
     if (error) res.send(error);
     res.json(results);
