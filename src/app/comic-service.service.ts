@@ -10,6 +10,7 @@ export class ComicServiceService {
 
   urlAutentica = 'http://localhost:3000/apiComic/comic';
   uslListaComis = 'http://localhost:3000/apiComic/comic-list';
+
   constructor(private http: HttpClient) { }
 
   public agregarComic(comic: ComicInsertar)
@@ -23,4 +24,6 @@ export class ComicServiceService {
     console.log("ID " + id);
     return this.http.post<ComicInsertar[]>(this.uslListaComis, {"id":id});
   }
+
+
 }

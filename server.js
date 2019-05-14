@@ -12,8 +12,8 @@ var myConnection = require('express-myconnection');
 app.use(myConnection(mysql, {
   host: 'localhost',
   user: 'root',
-  password : 'root',
-  port: 8889,
+  password : '',
+  port: 3306,
   database: 'comics',
   multipleStatements: true
 }, 'single'));
