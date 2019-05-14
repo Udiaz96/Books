@@ -22,15 +22,55 @@
     <div class="col-12">
       <div class="list-group">
         <div class="card list-group-item" *ngFor="let comic of comics">
-          <div class="card-body">
-            <h5 class="card-title">{{comic.titulo}}</h5>
-            <p class="card-text">{{comic.autor}}</p>
-            <p class="card-text">{{comic.numero}}</p>
 
+          <div class="card-body">
+
+            <form #form="ngForm" (ngSubmit)="onUpdate(form.value)" class="well">
+                <div class="form-group">
+                    <label>{{comic.titulo}}</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      required
+                      name="titulo"
+                      ngModel
+                    />
+                </div>
+                    <div class="form-group">
+                        <label>{{comic.autor}}</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          required
+                          name="autor"
+                          ngModel
+                        />
+                  </div>
+                  <div class="form-group">
+                      <label>{{comic.numero}}</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        required
+                        name="numero"
+                        ngModel
+                      />
+                  </div>
+                  <div class="form-group">
+                      <label>Editorial</label>
+                      <select class="form-control" name="idEditorial"  ngModel>
+                        <option value="1">Detective comics</option>
+                        <option value="2">Marvel</option>
+                        <option value="3">Vertigo</option>
+                        <option value="4">Panini</option>
+                      </select>
+                    </div>
+            </form>
             <button type="button" class="btn btn-primary btn-sm "(click)="onUpdate(comic)">editar</button>
             <button type="button" class="btn btn-primary btn-sm btn-danger" (click)="onDelete(comic)">borrar</button>
 
           </div>
+
         </div>
       </div>
     </div>

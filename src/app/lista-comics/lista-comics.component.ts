@@ -21,6 +21,15 @@ export class ListaComicsComponent implements OnInit {
     });
   }
 
+  onUpdate(comic: ComicInsertar)
+  {
+    console.log(comic);
+  }
+
+  onDelete(comic: ComicInsertar)
+  {
+    console.log(comic);
+  }
 
 
 }
