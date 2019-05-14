@@ -10,6 +10,7 @@ export class AuthService {
   urlAutentica = 'http://localhost:3000/api/auth';
 
   token: number;
+  tokenRol: number;
 
   constructor(private http: HttpClient) { }
 
@@ -33,6 +34,12 @@ export class AuthService {
   {
     this.token = Number(localStorage.getItem('ACCESS_TOKEN'));
     return this.token;
+  }
+
+  public getRol()
+  {
+   this.tokenRol = Number(localStorage.getItem('ROL_TOKEN'));
+   return this.tokenRol;
   }
 
 }

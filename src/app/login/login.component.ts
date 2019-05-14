@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
         else{
             console.log(data[0][0].idUsuarios);
             localStorage.setItem('ACCESS_TOKEN',data[0][0].idUsuarios);
+            localStorage.setItem('ROL_TOKEN',data[0][0].idRol);
 
             if(data[0][0].idRol === 2)
             {
