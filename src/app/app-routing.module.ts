@@ -8,6 +8,7 @@ import { AdministarUsuariosComponent } from './administar-usuarios/administar-us
 import { ListaComicsComponent } from './lista-comics/lista-comics.component';
 import { UsersGuard } from './users.guard';
 import { AuthGuard } from './auth.guard';
+import { ComicPrincipalComponent } from './comic-principal/comic-principal.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'prefix', redirectTo: 'login'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'cambio', component: CambioComponent, canActivate: [UsersGuard]},
   {path: 'comics', component: ComicsComponent, canActivate: [UsersGuard]},
   {path: 'admin', component: AdministarUsuariosComponent, canActivate: [AuthGuard]},
-  {path: 'lista', component: ListaComicsComponent, canActivate: [UsersGuard]}
+  {path: 'lista', component: ListaComicsComponent, canActivate: [UsersGuard]},
+  {path: 'principal', component: ComicPrincipalComponent, canActivate: [UsersGuard]}
 ];
 /*const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'cambio'},
