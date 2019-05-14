@@ -55,11 +55,13 @@ module.exports.comicDelete = function(req, res, next) {
 module.exports.productSave = (req, res, next) => {
   var comics = req.body;
   console.log(comics);
-  let sql =
-    "INSERT into Comics(titulo, autor, numero,idEditorial) values (?, ?, ?, ?);";
+
+    let sql =
+    "CALL NUEVO_COMIC(? ,?, ?, ?, ?)";
   conexion.query(
     sql,
     [
+      comics.idUsuarios,
       comics.titulo,
       comics.autor,
       comics.numero,

@@ -26,4 +26,9 @@ export class AuthService {
     localStorage.removeItem('ACCESS_TOKEN');
   }
 
+  public getTokenSession()
+  {
+    return localStorage.getItem('ACCESS_TOKEN');
+  }
+
 }
