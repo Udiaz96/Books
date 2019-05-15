@@ -14,24 +14,30 @@ export class ListaComicsComponent implements OnInit {
 
   constructor(private comicService: ComicServiceService, private authService: AuthService) { }
 
+  listarComics() {
+    this.comicService.listarComics(Number(this.authService.getTokenSession())).subscribe(data => {
+      console.log(data);
+      this.comics = data;
+    });
+  }
   ngOnInit() {
-    this.comicService.listarComics(Number(this.authService.getTokenSession())).subscribe(data =>{
-        console.log(data);
-        this.comics = data;
+    this.listarComics();
+  }
+
+  onUpdate(comic: ComicInsertar) {
+
+    console.log(comic);
+    this.comicService.actualizarComic(comic).subscribe(data => {
+      console.log(data);
     });
   }
 
-  onUpdate(comic: ComicInsertar)
-  {
-
-    console.log(comic);
-    this.comicService.actualizarComic(comic);
-  }
-
-  onDelete(comic: ComicInsertar)
-  {
-    console.log("Borrar" +  comic.idComics);
-    console.log(this.comicService.eliminarComic(comic));
+  onDelete(comic: ComicInsertar) {
+    console.log("Borrar" + comic.idComics);
+    this.comicService.eliminarComic(comic).subscribe(data => {
+      console.log(data);
+      this.listarComics();
+    });
   }
 
 

@@ -26,6 +26,7 @@ module.exports.comic = (req, res, next) => {
 };
 module.exports.comicUpdate = (req, res, next) => {
   var comics = req.body;
+  console.log(comics);
   let sql = `UPDATE Comics set titulo= ?, autor=?, numero=?, imagen=?, idEditorial=? WHERE idComics = ?;`;
   conexion.query(
     sql,
@@ -34,7 +35,8 @@ module.exports.comicUpdate = (req, res, next) => {
       comics.autor,
       comics.numero,
       comics.imagen,
-      comics.idEditorial
+      comics.idEditorial,
+      comics.idComics
     ],
     (error, results, fields) => {
       if (error) {
@@ -44,11 +46,12 @@ module.exports.comicUpdate = (req, res, next) => {
     }
   );
 };
-module.exports.comicDelete = function(req, res, next) {
-  console.log("borrar");
 
+module.exports.comicDelete = (req, res, next) => {
+  console.log("borrar");
+  console.log(req.body);
   let sql = `CALL ELIMINAR_COMIC(?)`;
-  conexion.query(sql, [req.params.id], (error, results, fields) => {
+  conexion.query(sql, [req.body.idComics], (error, results, fields) => {
     if (error) {
       res.send(error);
     }
