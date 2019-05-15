@@ -1,7 +1,7 @@
 export class ComicInsertar {
 
   idUsuario: number;
-  idCar: number;
+  idComics: number;
   titulo: string;
   autor: string;
   numero: string;

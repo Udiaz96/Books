@@ -9,7 +9,10 @@ import { IdToken } from './model/id';
 export class ComicServiceService {
 
   urlAutentica = 'http://localhost:3000/apiComic/comic';
+  urlActualizar = 'http://localhost:3000/apiComic/comic';
   uslListaComis = 'http://localhost:3000/apiComic/comic-list';
+  urlDeleteComic = 'http://localhost:3000/apiComic/comic-delete/';
+
   constructor(private http: HttpClient) { }
 
   public agregarComic(comic: ComicInsertar)
@@ -22,5 +25,20 @@ export class ComicServiceService {
   {
     console.log("ID " + id);
     return this.http.post<ComicInsertar[]>(this.uslListaComis, {"id":id});
+  }
+
+  public actualizarComic(comic: ComicInsertar)
+  {
+    console.log(comic);
+    return this.http.put<ComicInsertar>('urlActualizar', comic);
+  }
+
+  public eliminarComic(comic: ComicInsertar)
+  {
+    console.log(comic.idComics);
+
+    let urlLast = this.urlDeleteComic+comic.idComics;
+    console.log(urlLast);
+    return this.http.delete(urlLast);
   }
 }

@@ -23,12 +23,15 @@ export class ListaComicsComponent implements OnInit {
 
   onUpdate(comic: ComicInsertar)
   {
+
     console.log(comic);
+    this.comicService.actualizarComic(comic);
   }
 
   onDelete(comic: ComicInsertar)
   {
-    console.log(comic);
+    console.log("Borrar" +  comic.idComics);
+    console.log(this.comicService.eliminarComic(comic));
   }
 
 
