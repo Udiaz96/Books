@@ -15,6 +15,6 @@ export class CambioService {
     }
     cambioComicLista(){
 
-      return this.http.get<CambioArreglo[]>(this.cambioListaUrl,{ responseType: 'text' as 'json' });
+      return this.http.get<CambioArreglo[]>(this.cambioListaUrl);
     }
 }

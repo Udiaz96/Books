@@ -1,16 +1,18 @@
 import { NumberValueAccessor } from '@angular/forms/src/directives';
 
 export class CambioArreglo {
+  idUserG: number;
+
+  idComicG: number;
   tituloG: string;
   autorG: string;
   numeroG: string;
-  // que tipo es la imagen
-  //imagenG: ;
   editorialG: string;
+
+  idComicW: number;
   tituloW: string;
   autorW: string;
   numeroW: string;
-  //imagenW: ;
   editorialW: string;
 }
 
