@@ -38,10 +38,27 @@ export class AdministarUsuariosComponent implements OnInit {
   }
 
   deleteUser(user:User){
-    console.log(user);
-    this.usuarioService.deleteUser(user).subscribe(data=>{
-      this.selectUser = null;
-    });
+    Swal.fire({
+      title:'¿Eliminar usuario?',
+      text: "Esta acción no se puede revertir",
+      type:'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar'
+    }).then((result) =>{
+      if(result.value){
+          this.usuarioService.deleteUser(user).subscribe(data=>{
+            this.selectUser = null; });
+            Swal.fire({
+              type: "success",
+              title: "Eliminado correctamente",
+              text: "Se ha eliminado al usuario del sistema"
+            }).then(function(){
+              location.reload();
+            })
+      }
+    })
   }
 
 
