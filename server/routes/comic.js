@@ -5,7 +5,7 @@ var comicController = require('../controllers/comic.controller');
 
 router.post('/comic-list', comicController.comicList);
 router.get('/comic/:id', comicController.comic);
-router.put('/comic', comicController.comicUpdate);
+router.post('/comic-update', comicController.comicUpdate);
 router.post('/comic', comicController.comictSave);
-router.delete('/comic/:id', comicController.comicDelete);
+router.post('/comic-delete', comicController.comicDelete);
 module.exports = router;

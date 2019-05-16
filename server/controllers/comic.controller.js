@@ -5,7 +5,7 @@ var conexion = mysql.createConnection(config);
 module.exports.comicList = (req, res, next) => {
   var id = req.body.id;
   console.log(id);
-  let sql = `SELECT titulo, autor, numero, imagen, idEditorial FROM Usuarios JOIN UsuariosComics on Usuarios.idUsuarios = UsuariosComics.idUsuarios JOIN Comics on UsuariosComics.idComics = Comics.idComics WHERE  Usuarios.idUsuarios = ?;`;
+  let sql = `SELECT Comics.idComics, titulo, autor, numero, imagen, idEditorial FROM Usuarios JOIN UsuariosComics on Usuarios.idUsuarios = UsuariosComics.idUsuarios JOIN Comics on UsuariosComics.idComics = Comics.idComics WHERE  Usuarios.idUsuarios = ?;`;
   conexion.query(sql, [id], (error, results, fields) => {
     if (error) res.send(error);
     res.json(results);
@@ -26,6 +26,7 @@ module.exports.comic = (req, res, next) => {
 };
 module.exports.comicUpdate = (req, res, next) => {
   var comics = req.body;
+  console.log(comics);
   let sql = `UPDATE Comics set titulo= ?, autor=?, numero=?, imagen=?, idEditorial=? WHERE idComics = ?;`;
   conexion.query(
     sql,
@@ -34,7 +35,8 @@ module.exports.comicUpdate = (req, res, next) => {
       comics.autor,
       comics.numero,
       comics.imagen,
-      comics.idEditorial
+      comics.idEditorial,
+      comics.idComics
     ],
     (error, results, fields) => {
       if (error) {
@@ -44,12 +46,16 @@ module.exports.comicUpdate = (req, res, next) => {
     }
   );
 };
-module.exports.comicDelete = function(req, res, next) {
-  let sql = `DELETE FROM Comics where idComics= ?`;
-  conexion.query(sql, [req.params.id], (error, results, fields) => {
+
+module.exports.comicDelete = (req, res, next) => {
+  console.log("borrar");
+  console.log(req.body);
+  let sql = `CALL ELIMINAR_COMIC(?)`;
+  conexion.query(sql, [req.body.idComics], (error, results, fields) => {
     if (error) {
       res.send(error);
     }
+    console.log(results);
     res.json(results);
   });
 };
