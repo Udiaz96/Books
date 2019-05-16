@@ -25,6 +25,8 @@ export class UsuarioService {
   }
 
   deleteUser(user: User){
-    return this.http.delete('http://localhost:3000/api/eliminarUsuario/'+user.idUsuarios);
+    let url = 'http://localhost:3000/api/eliminarUsuario/'+user.idUsuarios;
+    console.log(url);
+    return this.http.delete(url);
   }
 }

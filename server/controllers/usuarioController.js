@@ -67,6 +67,7 @@ controller.updateUsuario = (req, res) =>{
 };
 
 controller.eliminaUsuario = (req, res) =>{
+  console.log(req.params);
     var id = req.params.id;
     let sql = 'CALL Elimina_Usuario(?)';
     req.getConnection((err, conn) =>{

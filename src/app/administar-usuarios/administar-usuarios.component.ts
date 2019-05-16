@@ -38,6 +38,7 @@ export class AdministarUsuariosComponent implements OnInit {
   }
 
   deleteUser(user:User){
+    console.log(user);
     this.usuarioService.deleteUser(user).subscribe(data=>{
       this.selectUser = null;
     });
