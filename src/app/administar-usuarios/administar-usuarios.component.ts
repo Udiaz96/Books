@@ -1,11 +1,12 @@
-import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit , ViewEncapsulation, Output, EventEmitter} from '@angular/core';
 import { User } from 'src/app/user';
 import { UsuarioService } from '../usuario.service';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-administar-usuarios',
   templateUrl: './administar-usuarios.component.html',
-  styleUrls: ['./administar-usuarios.component.css']
+  styleUrls: ['./administar-usuarios.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AdministarUsuariosComponent implements OnInit {
   users: User[];

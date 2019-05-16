@@ -4,6 +4,7 @@ const path = require("path");
 
 const usuarios = require("./server/routes/usuarios");
 const comics = require("./server/routes/comic");
+const cambios = require("./server/routes/cambio");
 const port = 3000;
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use('/api', usuarios);
 app.use('/apiComic',comics);
+app.use('/apiCambios',cambios);
 app.get("*", (req, res) => {
 res.sendFile(path.join(__dirname,'dist/index.html'));
 });

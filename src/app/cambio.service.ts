@@ -6,14 +6,15 @@ import { Cambio, CambioArreglo } from './cambio';
   providedIn: 'root'
 })
 export class CambioService {
-  private cambioUrl = 'http://localhost:3000/api/cambio';
-  private cambioListaUrl = 'http://localhost:3000/api/cambio';
+  private cambioUrl = 'http://localhost:3000/apiCambios/cambio';
+  private cambioListaUrl = 'http://localhost:3000/apiCambios/cambio-lista';
   constructor(private http: HttpClient) { }
     cambioComic(cambio: Cambio){
       console.log(cambio);
       return this.http.post<Cambio>(this.cambioUrl, cambio);
     }
     cambioComicLista(){
-      return this.http.get<CambioArreglo[]>(this.cambioListaUrl);
+
+      return this.http.get<CambioArreglo[]>(this.cambioListaUrl,{ responseType: 'text' as 'json' });
     }
 }

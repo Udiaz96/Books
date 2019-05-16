@@ -16,7 +16,7 @@ module.exports.cambio = (req, res, next) => {
 };
 
 module.exports.cambioLista = (req, res, next) => {
-  let sql = `CALLL cambioLista()`;
+  let sql = `CALL cambioLista()`;
   conexion.query(sql, (error, results, fields) => {
     if (error) res.send(error);
     res.json(results);

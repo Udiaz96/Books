@@ -28,6 +28,7 @@ export class AuthService {
 
   public logout(){
     localStorage.removeItem('ACCESS_TOKEN');
+    localStorage.removeItem('ROL_TOKEN');
   }
 
   public getTokenSession()

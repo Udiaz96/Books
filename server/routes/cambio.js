@@ -3,6 +3,6 @@ var router = express.Router();
 
 var cambioController = require('../controllers/cambio.controller');
 
-router.post('/comic', cambioController.cambio);
-router.post('/comic', cambioController.cambioLista);
+router.post('/cambio', cambioController.cambio);
+router.post('/cambio-lista', cambioController.cambioLista);
 module.exports = router;
