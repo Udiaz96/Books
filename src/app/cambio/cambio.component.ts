@@ -16,6 +16,7 @@ export class CambioComponent implements OnInit {
 
   ngOnInit() {
     this.cambioService.cambioComicLista().subscribe(data => {
+      console.log(data);
       this.cambiolista = data;
     });
   }
