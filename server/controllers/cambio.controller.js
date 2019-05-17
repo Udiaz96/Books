@@ -3,11 +3,12 @@ var config = require("../helpers/config");
 var conexion = mysql.createConnection(config);
 
 module.exports.cambio = (req, res, next) => {
+  console.log(req.body);
   var cambio = req.body;
-  let sql = `CALL cambioComic(?,?,?,?,?);`;
+  let sql = `CALL cambioComic(?,?,?);`;
   conexion.query(
     sql,
-    [cambio.idUsuarios, cambio.idUsuarios, cambio.idComics, cambio.idComics],
+    [cambio.idUsuarios, cambio.idComics, cambio.idComics],
     (error, results, fields) => {
       if (error) res.send(error);
       res.json(results);

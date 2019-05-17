@@ -18,22 +18,23 @@
                   <a class="nav-link" routerLink="/lista">Editar comics</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" routerLink="/cambio"
-                    >Cambiar comics</a
-                  >
+                  <a class="nav-link active" routerLink="/cambio">Cambiar comics</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" routerLink="/principal">Mis comics</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/agregar">Agregar Comic</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <div class="col-sm-6 container fondo">
-          <h1 class="text-center">Comic que dan</h1>
+          <h1 class="text-center">Comic que das</h1>
         </div>
         <div class="col-sm-6 container fondo">
-          <h1 class="text-center">Comic que das</h1>
+          <h1 class="text-center">Comic que dan</h1>
         </div>
       </div>
 
@@ -45,46 +46,57 @@
                 <th scope="col">Titulo</th>
                 <th scope="col">Autor</th>
                 <th scope="col">Numero</th>
-                <th scope="col">Imagen</th>
                 <th scope="col">Editorial</th>
 
                 <th scope="col">Titulo</th>
                 <th scope="col">Autor</th>
                 <th scope="col">Numero</th>
-                <th scope="col">Imagen</th>
                 <th scope="col">Editorial</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
               <tr class="nav-item hand" *ngFor="let cambiolista of cambiolista">
                 <td>
-                  <a class="nav-link">{{ cambiolista.tituloG }}</a>
+                  <a class="nav-link">{{ cambiolista.my_title }}</a>
                 </td>
                 <td>
-                  <a class="nav-link">{{ cambiolista.autorG }}</a>
+                  <a class="nav-link">{{ cambiolista.my_author }}</a>
                 </td>
                 <td>
-                  <a class="nav-link">{{ cambiolista.numeroG }}</a>
+                  <a class="nav-link">{{ cambiolista.my_number }}</a>
+                </td>
+                <td>
+                  <a class="nav-link">{{ cambiolista.my_editorial }}</a>
                 </td>
 
                 <td>
-                  <a class="nav-link">{{ cambiolista.editorialG }}</a>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  </div>
+                </td>
+
+                <td>
+                  <a class="nav-link">{{ cambiolista.wanted_editorial }}</a>
                 </td>
                 <td>
-                  <a class="nav-link">{{ cambiolista.editorialG }}</a>
+                  <a class="nav-link">{{ cambiolista.wanted_title }}</a>
                 </td>
                 <td>
-                  <a class="nav-link">{{ cambiolista.tituloW }}</a>
+                  <a class="nav-link">{{ cambiolista.wanted_author }}</a>
                 </td>
                 <td>
-                  <a class="nav-link">{{ cambiolista.autorW }}</a>
-                </td>
-                <td>
-                  <a class="nav-link">{{ cambiolista.numeroW }}</a>
+                  <a class="nav-link">{{ cambiolista.wanted_editorial }}</a>
                 </td>
 
                 <td>
                   <a class="nav-link">{{ cambiolista.editorialW }}</a>
+                </td>
+
+                <td>
+                  <div class="form-check">
+                    <button type="button" (click)="onCambiar(cambiolista)" class="btn btn-success">Cambiar</button>
+                  </div>
                 </td>
               </tr>
             </tbody>
