@@ -1,38 +1,110 @@
-<div>
-  <h1>
-    Regista Usuarios!
-  </h1>
-  <div class="col-sm-9">
-  <form #form="ngForm" (ngSubmit)="saveUser(form.value)" class="well">
-    <div class="form-group">
-      <label>Nombre</label>
-      <input type="text" class="form-control" required name="nombre" ngModel>
+<div class=" bgP">
+  <div class="jumbotron text-center BGJ ">
+    <div class="fuenteJ">
+      Registrate
     </div>
-    <div class="form-group">
-        <label>Apellidos</label>
-        <input type="text" class="form-control" required name="apellidos" ngModel>
+  </div>
+
+  <div>
+    <form #form="ngForm" (ngSubmit)="saveUser(form.value)" class="well">
+      <div class="row">
+        <div class="col-2"></div>
+
+        <div class="col-4 container fondo mb-4">
+          <div class="form-group ">
+            <label>
+              <div class="fuente">Nombre</div>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              required
+              name="nombre"
+              ngModel
+            />
+          </div>
+          <div class="form-group">
+            <label>
+              <div class="fuente">Apellidos</div>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              required
+              name="apellidos"
+              ngModel
+            />
+          </div>
+          <div class="form-group">
+            <label> <div class="fuente">Edad</div> </label>
+            <input
+              type="text"
+              class="form-control"
+              required
+              name="edad"
+              ngModel
+            />
+          </div>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+        <div class="col-4 container fondo mb-4">
+          <div class="form-group">
+            <label>
+              <div class="fuente">Nombre de Usuario</div>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              required
+              name="usuario"
+              ngModel
+            />
+          </div>
+          <div class="form-group">
+            <label><div class="fuente">Correo Electronico</div></label>
+            <input
+              type="text"
+              class="form-control"
+              required
+              name="correo"
+              ngModel
+            />
+          </div>
+          <div class="form-group">
+            <label> <div class="fuente">Contraseña</div></label>
+            <input
+              type="password"
+              class="form-control"
+              required
+              name="contrasena"
+              ngModel
+            />
+          </div>
+          <div class="form-group">
+            <label hidden="true">Rol</label>
+            <input
+              hidden="true"
+              value="2"
+              type="text"
+              class="form-control"
+              required
+              name="idRol"
+              ngModel
+            />
+          </div>
+        </div>
+
+        <div class="col-2"></div>
       </div>
-      <div class="form-group">
-          <label>Edad</label>
-          <input type="text" class="form-control" required name="edad" ngModel>
+    </form>
+  </div>
+
+  <footer class=" ftrC">
+    <div class="row mb-12 ">
+      <div class="col-12 text-center">
+        <p class="fuente2 text-center">© 2019 Copyright:</p>
+        <p class="fuente2 text-center">CambioComic.com.com</p>
       </div>
-      <div class="form-group">
-        <label>Nombre de Usuario</label>
-        <input type="text" class="form-control" required name="usuario" ngModel>
     </div>
-      <div class="form-group">
-        <label>Correo Electronico</label>
-        <input type="text" class="form-control" required name="correo" ngModel>
-      </div>
-      <div class="form-group">
-        <label>Contraseña</label>
-        <input type="password" class="form-control" required name="contrasena" ngModel>
-      </div>
-      <div class="form-group">
-        <label hidden= "true">Rol</label>
-        <input hidden="true" value=2 type="text" class="form-control" required name="idRol" ngModel>
-      </div>
-      <button type="submit" class="btn btn-success">Guardar</button>
-  </form>
-</div>
+  </footer>
 </div>

@@ -7,6 +7,7 @@ export class CambioArreglo {
   // que tipo es la imagen
   //imagenG: ;
   editorialG: string;
+
   tituloW: string;
   autorW: string;
   numeroW: string;

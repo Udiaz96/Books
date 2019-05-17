@@ -1,79 +1,117 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/lista">Editar comics</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/cambio">Cambiar comics</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/principal">Mis comics</a>
-        </li>
-
-      </ul>
+<div class=" bgP">
+  <div class="jumbotron text-center BGJ ">
+    <div class="fuenteJ">
+      Lista de tus comics
     </div>
   </div>
-</div>
+<div class="row" >
+<div class="col-1"></div>
+<div class="col-10">
 
-<div class="container lista-comics">
-  <div class="row">
-    <div class="col-12">
-      <div class="list-group">
-        <div class="card list-group-item" *ngFor="let comic of comics">
+  <div class="container-fluid ">
+    <div class="row fondo">
+      <div class="col-12">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/lista">Editar comics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cambio">Cambiar comics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/principal">Mis comics</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-          <div class="card-body">
-
-            <form #form="ngForm" (ngSubmit)="onUpdate(form.value)" class="well">
+  <div class="container lista-comics mb-5">
+    <div class="row fondo">
+      <div class="col-12">
+        <div class="list-group">
+          <div class="card list-group-item" *ngFor="let comic of comics">
+            <div class="card-body">
+              <form
+                #form="ngForm"
+                (ngSubmit)="onUpdate(form.value)"
+                class="well"
+              >
                 <div class="form-group">
-                    <label>Título</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      required
-                      name="titulo"
-                      [(ngModel)]="comic.titulo"
-                    />
+                  <label>Título</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    name="titulo"
+                    [(ngModel)]="comic.titulo"
+                  />
                 </div>
-                    <div class="form-group">
-                        <label>Autor</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          required
-                          name="autor"
-                          [(ngModel)]="comic.autor"
-                        />
-                  </div>
-                  <div class="form-group">
-                      <label>Número</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        required
-                        name="numero"
-                        [(ngModel)]="comic.numero"
-                      />
-                  </div>
-                  <div class="form-group">
-                      <label>Editorial</label>
-                      <select class="form-control" name="idEditorial"  [(ngModel)]="comic.idEditorial">
-                        <option value="1">Detective comics</option>
-                        <option value="2">Marvel</option>
-                        <option value="3">Vertigo</option>
-                        <option value="4">Panini</option>
-                      </select>
-                    </div>
-            </form>
-            <button type="button" class="btn btn-primary btn-success btn-sm btn-block"(click)="onUpdate(comic)">Guardar cambios</button>
-            <button type="button" class="btn btn-primary btn-danger btn-sm btn-block" (click)="onDelete(comic)">Eliminar</button>
-
+                <div class="form-group">
+                  <label>Autor</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    name="autor"
+                    [(ngModel)]="comic.autor"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Número</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    required
+                    name="numero"
+                    [(ngModel)]="comic.numero"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Editorial</label>
+                  <select
+                    class="form-control"
+                    name="idEditorial"
+                    [(ngModel)]="comic.idEditorial"
+                  >
+                    <option value="1">Detective comics</option>
+                    <option value="2">Marvel</option>
+                    <option value="3">Vertigo</option>
+                    <option value="4">Panini</option>
+                  </select>
+                </div>
+              </form>
+              <button
+                type="button"
+                class="btn btn-primary btn-success btn-sm btn-block"
+                (click)="onUpdate(comic)"
+              >
+                Guardar cambios
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-danger btn-sm btn-block"
+                (click)="onDelete(comic)"
+              >
+                Eliminar
+              </button>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="col-1"></div>
+</div>
+  <footer class=" ftrC">
+    <div class="row mb-12 ">
+      <div class="col-12 text-center">
+        <p class="fuente2 text-center">© 2019 Copyright:</p>
+        <p class="fuente2 text-center">CambioComic.com.com</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
 <router-outlet></router-outlet>
