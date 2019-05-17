@@ -1,82 +1,105 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/lista">Editar comics</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/cambio">Cambiar comics</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/principal">Mis comics</a>
-        </li>
-
-      </ul>
+<div class=" bgP">
+  <div class="jumbotron text-center BGJ ">
+    <div class="fuenteJ">
+      Cambio de Comics
     </div>
   </div>
-</div>
 
-<ul class="nav flex-column nav-pills">
-  <div class="row">
-    <div class="col-sm-6 ">
-      <h1 class="center">Comic que dan</h1>
-    </div>
-    <div class="col-sm-6 ">
-      <h1 class="center">Comic que das</h1>
-    </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Titulo</th>
-          <th scope="col">Autor</th>
-          <th scope="col">Numero</th>
-          <th scope="col">Editorial</th>
+  <div class="row mb-5">
+    <div class="col-1"></div>
 
-          <th scope="col">Titulo</th>
-          <th scope="col">Autor</th>
-          <th scope="col">Numero</th>
-          <th scope="col">Editorial</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="nav-item hand" *ngFor="let cambioComic of cambiolista">
-          <td>
-            <a class="nav-link">{{ cambioComic.my_title }}</a>
-          </td>
-          <td>
-            <a class="nav-link">{{ cambioComic.my_author }}</a>
-          </td>
-          <td>
-            <a class="nav-link">{{ cambioComic.my_number }}</a>
-          </td>
-          <!--
-          <td>
-              <a class="nav-link">{{ cambiolista.imagenG}}</a>
-            </td>
-          -->
-          <td>
-            <a class="nav-link">{{ cambioComic.wanted_editorial }}</a>
-          </td>
-          <td>
-            <a class="nav-link">{{ cambioComic.wanted_title }}</a>
-          </td>
-          <td>
-            <a class="nav-link">{{ cambioComic.wanted_author }}</a>
-          </td>
-          <td>
-            <a class="nav-link">{{ cambioComic.wanted_number }}</a>
-          </td>
-          <!--
-              <td>
-                  <a class="nav-link">{{ cambiolista.imagenW}}</a>
+    <div class="col-10">
+      <div class="row">
+        <div class="container-fluid">
+          <div class="row fondo">
+            <div class="col-12">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/lista">Editar comics</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" routerLink="/cambio"
+                    >Cambiar comics</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/principal">Mis comics</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 container fondo">
+          <h1 class="text-center">Comic que dan</h1>
+        </div>
+        <div class="col-sm-6 container fondo">
+          <h1 class="text-center">Comic que das</h1>
+        </div>
+      </div>
+
+      <div clas="row fondo">
+        <div class="col-12 fondo">
+          <table class="table mb-5">
+            <thead>
+              <tr>
+                <th scope="col">Titulo</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Editorial</th>
+
+                <th scope="col">Titulo</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Numero</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Editorial</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="nav-item hand" *ngFor="let cambiolista of cambiolista">
+                <td>
+                  <a class="nav-link">{{ cambiolista.tituloG }}</a>
                 </td>
-              -->
-          <td>
-            <a class="nav-link">{{ cambioComic.wanted_editorial }}</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+                <td>
+                  <a class="nav-link">{{ cambiolista.autorG }}</a>
+                </td>
+                <td>
+                  <a class="nav-link">{{ cambiolista.numeroG }}</a>
+                </td>
+
+                <td>
+                  <a class="nav-link">{{ cambiolista.editorialG }}</a>
+                </td>
+                <td>
+                  <a class="nav-link">{{ cambiolista.editorialG }}</a>
+                </td>
+                <td>
+                  <a class="nav-link">{{ cambiolista.tituloW }}</a>
+                </td>
+                <td>
+                  <a class="nav-link">{{ cambiolista.autorW }}</a>
+                </td>
+                <td>
+                  <a class="nav-link">{{ cambiolista.numeroW }}</a>
+                </td>
+
+                <td>
+                  <a class="nav-link">{{ cambiolista.editorialW }}</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-1"></div>
   </div>
-</ul>
+  <footer class=" ftrC">
+    <div class="row mb-12 ">
+      <div class="col-12 text-center">
+        <p class="fuente2 text-center">© 2019 Copyright:</p>
+        <p class="fuente2 text-center">CambioComic.com.com</p>
+      </div>
+    </div>
+  </footer>
+</div>

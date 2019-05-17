@@ -1,7 +1,7 @@
 .fondo{
 
 	background-size: cover;
-	background-color: rgba(255, 255, 255, 0.37);
+	background-color: rgba(83, 82, 82, 0.514);
 }
 .BGJ{
 
@@ -39,9 +39,9 @@
 }
 .fuenteJ{
   font:  bold;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 60px;
-  color: rgb(255, 255, 255);
+  color: rgb(51, 241, 26);
 
 
 }
