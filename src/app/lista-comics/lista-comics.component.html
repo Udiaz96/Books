@@ -8,33 +8,29 @@
 <div class="col-1"></div>
 <div class="col-10">
 
-  <div class="container-fluid ">
-    <div class="row fondo">
-      <div class="col-12">
-        <ul class="nav nav-tabs">
-          <li class="nav-item">
-            <a class="nav-link active" routerLink="/lista">Editar comics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/cambio">Cambiar comics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/principal">Mis comics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/agregar">Agregar comics</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
   <div class="container lista-comics mb-5">
     <div class="row fondo">
       <div class="col-12">
-        <div class="list-group">
+          <div class="container-fluid ">
+              <div class="row fondo">
+                <div class="col-12">
+                  <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" routerLink="/lista">Mis comics</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/cambio">Cambiar comics</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/agregar">Agregar comics</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        <div class="list-group fondo mb-5">
           <div class="card list-group-item" *ngFor="let comic of comics">
-            <div class="card-body">
+
               <form
                 #form="ngForm"
                 (ngSubmit)="onUpdate(form.value)"
@@ -98,7 +94,7 @@
               >
                 Eliminar
               </button>
-            </div>
+
           </div>
         </div>
       </div>
