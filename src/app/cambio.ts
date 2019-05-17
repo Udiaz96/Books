@@ -1,19 +1,19 @@
 import { NumberValueAccessor } from '@angular/forms/src/directives';
 
 export class CambioArreglo {
-  idUserG: number;
+  idUsuarios: number;
 
-  idComicG: number;
-  tituloG: string;
-  autorG: string;
-  numeroG: string;
-  editorialG: string;
+  my_idComic: number;
+  my_title: string;
+  my_author: string;
+  my_number: string;
+  my_editorial: string;
 
-  idComicW: number;
-  tituloW: string;
-  autorW: string;
-  numeroW: string;
-  editorialW: string;
+  wanted_idComic: number;
+  wanted_title: string;
+  wanted_author: string;
+  wanted_number: string;
+  wanted_editorial: string;
 }
 
 export class Cambio {

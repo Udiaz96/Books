@@ -31,26 +31,24 @@
           <th scope="col">Titulo</th>
           <th scope="col">Autor</th>
           <th scope="col">Numero</th>
-          <th scope="col">Imagen</th>
           <th scope="col">Editorial</th>
 
           <th scope="col">Titulo</th>
           <th scope="col">Autor</th>
           <th scope="col">Numero</th>
-          <th scope="col">Imagen</th>
           <th scope="col">Editorial</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="nav-item hand" *ngFor="let cambiolista of cambiolista">
+        <tr class="nav-item hand" *ngFor="let cambioComic of cambiolista">
           <td>
-            <a class="nav-link">{{ cambiolista.tituloG }}</a>
+            <a class="nav-link">{{ cambioComic.my_title }}</a>
           </td>
           <td>
-            <a class="nav-link">{{ cambiolista.autorG }}</a>
+            <a class="nav-link">{{ cambioComic.my_author }}</a>
           </td>
           <td>
-            <a class="nav-link">{{ cambiolista.numeroG }}</a>
+            <a class="nav-link">{{ cambioComic.my_number }}</a>
           </td>
           <!--
           <td>
@@ -58,16 +56,16 @@
             </td>
           -->
           <td>
-            <a class="nav-link">{{ cambiolista.editorialG }}</a>
+            <a class="nav-link">{{ cambioComic.wanted_editorial }}</a>
           </td>
           <td>
-            <a class="nav-link">{{ cambiolista.tituloW }}</a>
+            <a class="nav-link">{{ cambioComic.wanted_title }}</a>
           </td>
           <td>
-            <a class="nav-link">{{ cambiolista.autorW }}</a>
+            <a class="nav-link">{{ cambioComic.wanted_author }}</a>
           </td>
           <td>
-            <a class="nav-link">{{ cambiolista.numeroW }}</a>
+            <a class="nav-link">{{ cambioComic.wanted_number }}</a>
           </td>
           <!--
               <td>
@@ -75,7 +73,7 @@
                 </td>
               -->
           <td>
-            <a class="nav-link">{{ cambiolista.editorialW }}</a>
+            <a class="nav-link">{{ cambioComic.wanted_editorial }}</a>
           </td>
         </tr>
       </tbody>
